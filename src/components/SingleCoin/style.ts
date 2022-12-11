@@ -14,13 +14,16 @@ export const StyledCoin = styled.li`
     display: flex;
     align-items: center;
     & > div {
-      margin-left: 20px;
+      margin-left: 20px;  
 
       & > p:first-child {
         font-size: 16px;
+        margin:0px;
       }
       & > p:last-child {
         font-size: 11px;
+        margin:3px 0px 0px 0px;
+
       }
     }
 
@@ -43,7 +46,6 @@ export const StyledCoin = styled.li`
         & > p:last-child {
           font-size: 0.9vw;
           opacity: 0.5;
-          margin-top: 5px;
         }
       }
     }
@@ -52,14 +54,3 @@ export const StyledCoin = styled.li`
 
 
 
-export const StyledIconButton = styled.button`
-  background-color: transparent;
-  color: ${(props) => props.theme.white};
-  border: none;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    border: 1px solid gray;
-  }
-`;

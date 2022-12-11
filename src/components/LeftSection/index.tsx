@@ -1,10 +1,8 @@
-import React from 'react';
 import { StyledLeftSection } from './style';
+import { IChildrenProps } from '../../types';
 
-type Props = {
-    children: React.ReactNode;
-};
-const LeftSection = (props: Props) => {
+
+const LeftSection = (props: IChildrenProps) => {
     return (
         <StyledLeftSection>
         <h1>Now you can track all your crypto here!</h1>

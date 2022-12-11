@@ -1,11 +1,14 @@
 import { StyledLabel } from './style';
+import { ITextFieldProps } from '../../types';
 
 
-type Props = {};
-export const TextField = (props: Props) => {
+export const TextField = (props: ITextFieldProps) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      props.onChange(event.currentTarget.value)
+  }
   return (
     <StyledLabel>
-      <input placeholder='CRYPOCURRENCY CODE' />
+      <input placeholder='CRYPOCURRENCY CODE' value={props.value} onChange={handleChange}/>
       <span>CRYPOCURRENCY CODE</span>
     </StyledLabel>
   );

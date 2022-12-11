@@ -1,23 +1,26 @@
-import { StyledCoin, StyledIconButton } from "./style";
-import { AiOutlineClose } from 'react-icons/ai';
+import { StyledCoin } from './style';
+import { IListItemProps } from '../../types';
 
-import getMoneyFormat from "../../utils/getMoneyFormat";
+import toNum from '../../utils/toNum';
+import CloseIcon from '../CloseIcon';
 
-const SingleCoin = () => {
-    return (
-        <StyledCoin>
+const SingleCoin = ({ onDeleteCoin, coin }: IListItemProps) => {
+  return (
+    <StyledCoin>
+      <div>
+        <img src='/assets/icon.svg' alt='coin' />
         <div>
-          <img src='/assets/icon.svg' alt='coin' />
-          <div>
-            <p>BTC</p>
-            <p>{getMoneyFormat(1234566)}</p>
-          </div>
+          <p>{`${coin?.coinId}`.toUpperCase()}</p>
+          <p>{toNum(coin?.ticker?.lastPrice)}€</p>
         </div>
-        <StyledIconButton>
-          <AiOutlineClose />
-        </StyledIconButton>
-      </StyledCoin>
-    );
+      </div>
+      <CloseIcon
+        onClick={() => {
+          onDeleteCoin(coin.coinId);
+        }}
+      />
+    </StyledCoin>
+  );
 };
 
 export default SingleCoin;

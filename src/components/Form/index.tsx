@@ -1,19 +1,14 @@
-// @flow
-import * as React from 'react';
-import TextField from '../TextField';
-import Button from '../Button';
-
-
 import { StyledFromContainer } from './style';
+import { IChildrenProps } from '../../types';
 
-type Props = {};
-export const Form = (props: Props) => {
+
+
+export const Form = (props: IChildrenProps) => {
   return (
     <StyledFromContainer>
       <div>
         <form>
-          <TextField />
-          <Button />
+          {props.children}
         </form>
       </div>
       <p>Use of this service is subject to terms and conditions.</p>
