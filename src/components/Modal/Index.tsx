@@ -2,11 +2,9 @@ import Modal from 'react-modal';
 
 import { customStyles } from './style';
 import { FlexBox } from '../../styles';
-import { IModalProps } from '../../types';
+
 
 import Button from '../Button';
-
-Modal.setAppElement('#root');
 
 const ModalComponent = ({ isOpen, onClose, onDelete }: IModalProps) => {
   return (
@@ -15,6 +13,7 @@ const ModalComponent = ({ isOpen, onClose, onDelete }: IModalProps) => {
       style={customStyles}
       isOpen={isOpen}
       onRequestClose={onClose}
+      ariaHideApp={false}
     >
       <FlexBox
         width='100%'

@@ -1,30 +1,30 @@
-export type ICoinProps = {
+ type ICoinProps = {
     coinId: string;
     marketSymbol: string;
     ticker: {
         lastPrice: string;
     };
-    loading?: false;
+    //loading?: false;
 }
 
-export type IUseCoin = {
+ type IUseCoin = {
     deleteCoin: (param: string) => void;
     addCoin: (param: string) => Promise<void>;
     coins: ICoinProps[];
     isLoading: boolean
 }
 
-export type ISingleCoinProps = {
+ type ISingleCoinProps = {
     coin: ICoinProps;
     onDeleteCoin: (coinId: string) => void;
 };
 
-export type ICoinListProps = {
+ type ICoinListProps = {
     coins: ICoinProps[];
     onClick: (coinId: string) => void;
 }
 
-export type IFlexProps = {
+ type IFlexProps = {
     justifyContent?: string;
     alignItems?: string;
     flexDirection?: string;
@@ -32,7 +32,7 @@ export type IFlexProps = {
     width?: string;
 }
 
-export type IButtonProps = {
+ type IButtonProps = {
     disabled?: boolean;
     loading?: boolean;
     onClick?: () => void;
@@ -42,29 +42,29 @@ export type IButtonProps = {
     children: React.ReactNode
 };
 
-export type IChildrenProps = {
+ type IChildrenProps = {
     children: React.ReactNode
 };
 
 
-export type IModalProps = {
+ type IModalProps = {
     isOpen: boolean;
     onClose: () => void;
     onDelete: () => void
 };
 
 
-export type ButtonStyleProps = {
+ type ButtonStyleProps = {
     isDelete?: boolean,
     isAdd?: boolean,
     width?: string
 }
 
-export type ICloseIconProps = {
+ type ICloseIconProps = {
     onClick: () => void
 }
 
-export type ITextFieldProps = {
+ type ITextFieldProps = {
     onChange: (value: string) => void,
     value: string
 }

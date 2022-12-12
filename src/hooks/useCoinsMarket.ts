@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { ICoinProps, IUseCoin } from "../types";
-import { getPrice } from "../Service/priceService";
+import { getCoinMarkets } from "../Service/coinMarketService";
 
-const UseCoins = (): IUseCoin => {
+const UseCoinsMarket = (): IUseCoin => {
     const [coins, setCoins] = useState<ICoinProps[]>([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -15,7 +14,7 @@ const UseCoins = (): IUseCoin => {
         }
 
         setIsLoading(true)
-        const coinPriceData = await getPrice(coinId);
+        const coinPriceData = await getCoinMarkets(coinId);
         if (coinPriceData.length) {
             setCoins((state) => [{ ...coinPriceData[0], coinId }, ...state]);
             toast.success(`Successfully added ${coinId}`, {
@@ -40,4 +39,4 @@ const UseCoins = (): IUseCoin => {
 }
 
 
-export default UseCoins;
+export default UseCoinsMarket;

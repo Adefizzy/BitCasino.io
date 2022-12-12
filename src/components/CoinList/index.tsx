@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 
-import { ICoinListProps } from '../../types';
 import { StyledUl } from './style';
 
 import Empty from '../Empty';

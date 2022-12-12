@@ -1,10 +1,9 @@
 import { toast } from "react-toastify";
 
 import client  from "../config/apollo";
-import { ICoinProps } from "../types";
 import { GET_COIN_PRICES } from "./queries/coinPriceQuery";
 
-export const getPrice = async (coinCode: string): Promise<ICoinProps[]> => {
+export const getCoinMarkets = async (coinCode: string): Promise<ICoinProps[]> => {
     const { data, error } = await client.query({
         query: GET_COIN_PRICES,
         variables: { coinCode },

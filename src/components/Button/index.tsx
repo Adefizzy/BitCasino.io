@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledButton } from './style';
-import { IButtonProps } from  '../../types';
+
 
 
 const Button = (props: IButtonProps) => {

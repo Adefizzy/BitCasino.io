@@ -1,5 +1,5 @@
 import { StyledLabel } from './style';
-import { ITextFieldProps } from '../../types';
+
 
 
 export const TextField = (props: ITextFieldProps) => {

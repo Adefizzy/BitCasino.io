@@ -1,5 +1,5 @@
 import { StyledCoin } from './style';
-import { ISingleCoinProps } from '../../types';
+
 
 import formatPrice from '../../utils/formatPrice';
 import CloseIcon from '../CloseIcon';

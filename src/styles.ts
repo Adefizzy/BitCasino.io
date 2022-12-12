@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import device from "./utils/breakpoints";
-import { IFlexProps } from './types'
 
 
 export const FlexBox = styled.div<IFlexProps>`

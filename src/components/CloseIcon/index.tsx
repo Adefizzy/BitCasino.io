@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 
 import { StyledIconButton } from "./style";
-import { ICloseIconProps } from '../../types'
 
 import ModalComponent from '../Modal/Index';
 

@@ -1,6 +1,4 @@
 import { StyledFromContainer } from './style';
-import { IChildrenProps } from '../../types';
-
 
 
 export const Form = (props: IChildrenProps) => {

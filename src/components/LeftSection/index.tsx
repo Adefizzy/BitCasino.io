@@ -1,5 +1,4 @@
 import { StyledLeftSection } from './style';
-import { IChildrenProps } from '../../types';
 
 
 const LeftSection = (props: IChildrenProps) => {

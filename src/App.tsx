@@ -9,13 +9,13 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import LeftSection from './components/LeftSection';
 import Form from './components/Form';
-import UseCoins from './hooks/useCoins';
+import UseCoinsMarket from './hooks/useCoinsMarket';
 import TextField from './components/TextField';
 import Button from './components/Button';
 import Coinlist from './components/CoinList';
 
 function App() {
-  const { coins, addCoin, deleteCoin, isLoading } = UseCoins();
+  const { coins, addCoin, deleteCoin, isLoading } = UseCoinsMarket();
   const [coinCode, setCoinCode] = useState('');
 
   const fetchCoin = async () => {
