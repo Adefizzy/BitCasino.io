@@ -1,11 +1,8 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import userEvent from '@testing-library/user-event';
-import { MockedProvider, MockedResponse } from '@apollo/client/testing';
-import { GET_COIN_PRICES } from './Service/queries/coinPriceQuery';
 
-const waitForData = () => new Promise(res => setTimeout(res, 0))
+
 describe('App', () => {
   it('should render needed components', () => {
     render(<App />);
