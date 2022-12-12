@@ -10,6 +10,7 @@ export const FlexBox = styled.div<IFlexProps>`
     align-items: ${props => props?.alignItems || 'flex-start'} ;
     width:${props => props?.width || 'fit-content'};
     height:${props => props.height || 'auto'} ;
+    flex-direction: ${props => props.flexDirection || 'row'} ;
 `
 
 export const StyledLayout = styled.main`

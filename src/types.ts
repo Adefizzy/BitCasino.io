@@ -27,6 +27,7 @@ export type ICoinListProps = {
 export type IFlexProps = {
     justifyContent?: string;
     alignItems?: string;
+    flexDirection?: string;
     height?: string;
     width?: string;
 }
