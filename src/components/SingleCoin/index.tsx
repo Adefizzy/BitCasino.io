@@ -1,17 +1,17 @@
 import { StyledCoin } from './style';
-import { IListItemProps } from '../../types';
+import { ISingleCoinProps } from '../../types';
 
-import toNum from '../../utils/toNum';
+import formatPrice from '../../utils/formatPrice';
 import CloseIcon from '../CloseIcon';
 
-const SingleCoin = ({ onDeleteCoin, coin }: IListItemProps) => {
+const SingleCoin = ({ onDeleteCoin, coin }: ISingleCoinProps) => {
   return (
     <StyledCoin>
       <div>
         <img src='/assets/icon.svg' alt='coin' />
         <div>
           <p>{`${coin?.coinId}`.toUpperCase()}</p>
-          <p>{toNum(coin?.ticker?.lastPrice)}€</p>
+          <p>{formatPrice(coin?.ticker?.lastPrice)} €</p>
         </div>
       </div>
       <CloseIcon

@@ -7,19 +7,19 @@ export type ICoinProps = {
     loading?: false;
 }
 
-export type ICoinsHelperResponse = {
-    removeCoin: (param: string) => void;
+export type IUseCoin = {
+    deleteCoin: (param: string) => void;
     addCoin: (param: string) => Promise<void>;
     coins: ICoinProps[];
     isLoading: boolean
 }
 
-export type IListItemProps = {
+export type ISingleCoinProps = {
     coin: ICoinProps;
     onDeleteCoin: (coinId: string) => void;
 };
 
-export type IListProps = {
+export type ICoinListProps = {
     coins: ICoinProps[];
     onClick: (coinId: string) => void;
 }

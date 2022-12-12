@@ -3,7 +3,7 @@ import device from '../../utils/breakpoints';
 
 
 export const StyledHeader = styled.header`
-width: 85%;
+width: 90%;
 margin: 0 auto;
 padding: 20px 0;
 `;

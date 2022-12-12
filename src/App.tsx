@@ -15,11 +15,11 @@ import Button from './components/Button';
 import Coinlist from './components/CoinList';
 
 function App() {
-  const { coins, addCoin, removeCoin, isLoading } = UseCoins();
+  const { coins, addCoin, deleteCoin, isLoading } = UseCoins();
   const [coinCode, setCoinCode] = useState('');
 
   const fetchCoin = async () => {
-    await addCoin(coinCode);
+    await addCoin(coinCode?.trim()?.toUpperCase());
     setCoinCode('');
   };
 
@@ -30,13 +30,13 @@ function App() {
           <Header />
           <div>
             <LeftSection>
-              <Coinlist coins={coins} onClick={removeCoin} />
+              <Coinlist coins={coins} onClick={deleteCoin} />
             </LeftSection>
             <Form>
               <TextField
                 value={coinCode}
                 onChange={(value) => {
-                  setCoinCode(value);
+                  setCoinCode(value.trim());
                 }}
               />
               <Button

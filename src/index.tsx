@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import client from './config/apollo';
+import ErrorBoundary from './components/ErrorBoundary';
 
 import './index.css';
 
@@ -14,9 +15,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
+    <ErrorBoundary>
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
+    </ErrorBoundary>
   </React.StrictMode>,
 );
 

@@ -1,36 +1,31 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { ICoinProps, ICoinsHelperResponse } from "../types";
+import { ICoinProps, IUseCoin } from "../types";
 import { getPrice } from "../Service/priceService";
 
-export default function UseCoins(): ICoinsHelperResponse {
+const UseCoins = (): IUseCoin => {
     const [coins, setCoins] = useState<ICoinProps[]>([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const addCoin = async (coinId: string): Promise<void> => {
-        if (!coinId) {
-            toast.error("Please enter a coin name");
+    const addCoin = async (coinId: string) => {
+        const hasCoin = coins.some((coin) => coin.coinId === coinId);
+        if (hasCoin) {
+            toast.warning(`This coin already exist: ${coinId}`);
             return;
         }
 
-        const hasCoin = [...coins].some((coin) => coin.coinId === coinId);
-        if (hasCoin) {
-            toast.warning(`This coin already exist ${coinId}`);
-            return;
-        }
         setIsLoading(true)
-        const marketData = await getPrice(coinId);
-        if (marketData.length) {
-            setCoins((state) => [{ ...marketData[0], coinId }, ...state]);
+        const coinPriceData = await getPrice(coinId);
+        if (coinPriceData.length) {
+            setCoins((state) => [{ ...coinPriceData[0], coinId }, ...state]);
             toast.success(`Successfully added ${coinId}`, {
                 autoClose: 1500,
             });
         }
-
         setIsLoading(false)
     };
 
-    const removeCoin = (coinId: string): void => {
+    const deleteCoin = (coinId: string) => {
         setCoins(
             (prevState) =>
                 ([...prevState].filter((coin) => coin.coinId !== coinId))
@@ -41,5 +36,8 @@ export default function UseCoins(): ICoinsHelperResponse {
         });
     };
 
-    return { removeCoin, addCoin, coins, isLoading };
+    return { deleteCoin, addCoin, coins, isLoading };
 }
+
+
+export default UseCoins;
